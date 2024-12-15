@@ -1,8 +1,11 @@
 name: Generate Static SVG/PNG
 on:
   schedule:
-    - cron: '*/15 * * * *' # Run every 15 minutes (adjust as needed)
+    - cron: '*/15 * * * *' # Run every 15 minutes
   workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write # Grant write access to the repository
 
 jobs:
   generate-static-file:
@@ -17,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Use Node.js 18 or later to match sharp requirements
+          node-version: 18
 
       # Step 3: Install dependencies
       - name: Install dependencies
@@ -29,6 +32,8 @@ jobs:
 
       # Step 5: Commit and Push the updated files
       - name: Commit and Push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
