@@ -17,21 +17,21 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18 # Use Node.js 18 or later to match sharp requirements
 
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Run the script to generate the static file
+      # Step 4: Run the script to generate the static files
       - name: Generate Static File
         run: node generateStatic.js
 
-      # Step 5: Commit and Push the updated file
+      # Step 5: Commit and Push the updated files
       - name: Commit and Push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add price-static.svg price.png
-          git commit -m "Update static price files"
+          git commit -m "Update static files"
           git push
