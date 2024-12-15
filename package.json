@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "jsdom": "^25.0.1",
+    "node-fetch": "^2.7.0",
     "sharp": "^0.33.5"
   }
 }
