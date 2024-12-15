@@ -4,6 +4,7 @@
   <text x="50%" y="50%" font-size="80" font-family="Arial, sans-serif" fill="#333" text-anchor="middle" dominant-baseline="middle">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     $1.085 USD
 =======
     $1.087 USD
@@ -11,5 +12,8 @@
 =======
     $1.086 USD
 >>>>>>> e366982 (Update static files)
+=======
+    $1.085 USD
+>>>>>>> fc131b7 (Update static files)
   </text>
 </svg>
