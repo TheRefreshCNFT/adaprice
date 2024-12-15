@@ -1,0 +1,37 @@
+name: Generate Static SVG/PNG
+on:
+  schedule:
+    - cron: '*/15 * * * *' # Run every 15 minutes (adjust as needed)
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  generate-static-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run the script to generate the static file
+      - name: Generate Static File
+        run: node generateStatic.js
+
+      # Step 5: Commit and Push the updated file
+      - name: Commit and Push
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add price-static.svg price.png
+          git commit -m "Update static price files"
+          git push
