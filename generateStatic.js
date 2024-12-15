@@ -27,7 +27,7 @@ function generateSVG(price) {
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 200 50">
   <rect width="200" height="50" fill="#f4f4f9" />
   <text x="100" y="30" font-size="20" font-family="Arial, sans-serif" fill="#333" text-anchor="middle">
-    $${price.toFixed(2)} USD
+    $${price.toFixed(3)} USD
   </text>
 </svg>`;
 }
@@ -42,7 +42,7 @@ function generateSVG(price) {
       return;
     }
 
-    console.log(`Fetched ADA Price: $${price.toFixed(2)}`);
+    console.log(`Fetched ADA Price: $${price.toFixed(3)}`);
 
     // Step 2: Generate and write the static SVG file
     const svgContent = generateSVG(price);
