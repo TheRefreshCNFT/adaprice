@@ -24,7 +24,7 @@ async function fetchAdaPrice() {
 // Function to generate the SVG content
 function generateSVG(price) {
   return `
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 200 50">
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="250" viewBox="0 0 500 250">
   <rect width="500" height="250" fill="#f4f4f9" />
   <text x="400" y="200" font-size="45" font-family="Arial, sans-serif" fill="#333" text-anchor="middle">
     $${price.toFixed(3)} USD
